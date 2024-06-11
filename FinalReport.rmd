@@ -21,6 +21,12 @@ A new  preventative aides drug (triUmpsal) is under test in clinical trials. Con
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method. Discuss what data manipulations may be needed for example subsetting or other binning procedures and what sort of graphical displays and inferential tools will be used!-->
 
+What we will do is take all the people in triumph and get a subset of the drugusers. 
+
+```{r}
+drugusers<-filter(triUmp,DrugUser=="yes")
+```
+
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
@@ -30,10 +36,24 @@ A new  preventative aides drug (triUmpsal) is under test in clinical trials. Con
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question. Bottom line is to explain the features of the graph that are relevant to conforming or departing to what is expected by your null hypothesis !-->
+```{r}
+barchartGC(~infected + treatment,data=drugusers)
+barchartGC(~infected + treatment,data=drugusers, type="percent")
+
+```
+  
+For the very first chart showing not many people got aids which is a typical situation because in a clinical total not many people got what the supposed treatment prevent. In the second chart the amount of people in the tan area of this chart took the placebo while the blue got drugs, those who get aids 3x as many took the placebo than the prevent drugs.
 
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+```{r}
+table1 <- xtabs(~infected + treatment, data=drugusers)
+rowPerc(table1)
+colPerc(table1)
+```
+
+Those who ended up infected 24% has taken the drug while 75% had taken the placebo, 3x more likely to get infected, had taken the placebo than had taken the drug which is supposed to prevent them from getting infected, therefore these helps prevent aids. 
 
 ## Inferential Results
 
