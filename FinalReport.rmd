@@ -59,7 +59,16 @@ Those who ended up infected 24% has taken the drug while 75% had taken the place
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+  The fisher test for count data shows that, the P value is .0000000423. I will reject the null hypothesis rainly because there is a big difference in taking the drug or placebo. This seems to show that people taking this drug seems to pevent them from data, although we do not know how this drug works.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+ 
+   We conducted a series of test to see if the drugs or placebo seems to be effective of preventing aids, for the very first chart showing that not many people get aids and in a clinical trial showing that not many people got what the supposed treatment was to prevent. In the second chart that we explored the amount of people in the tan area took the placebo while blue got the drugs. 
